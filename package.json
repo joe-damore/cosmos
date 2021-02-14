@@ -2,7 +2,11 @@
   "name": "cosmos",
   "version": "0.1.0",
   "description": "Experimental media browser and launcher",
-  "main": "index.js",
+  "main": "dist/index.bundle.js",
+  "scripts": {
+    "start": "node .",
+    "build": "npx webpack"
+  },
   "repository": "git@github.com:joe-damore/cosmos.git",
   "author": "Joe D'Amore <joe@joedamore.me>",
   "license": "MIT",
