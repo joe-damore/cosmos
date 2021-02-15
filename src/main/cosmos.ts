@@ -9,6 +9,8 @@ class CosmosApp extends App {
 
   public init() : number {
     console.log('Hello, world!');
+    console.log(this.config);
+    //console.log(this.config.db.path);
 
     return 0;
   }
