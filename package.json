@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "commander": "^7.0.0",
-    "jsonschema": "^1.4.0"
+    "jsonschema": "^1.4.0",
+    "yaml": "^1.10.0"
   }
 }
