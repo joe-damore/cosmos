@@ -24,6 +24,7 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "commander": "^7.0.0"
+    "commander": "^7.0.0",
+    "jsonschema": "^1.4.0"
   }
 }
