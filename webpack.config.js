@@ -17,6 +17,19 @@ const mainConfig = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.bundle.js',
   },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.ts', '.js', '.json', '.wasm'],
+    alias: getAliases(__dirname),
+  },
 };
 
 const rendererConfigs = getRenderers(RENDERER_PATH).map((renderer) => {
