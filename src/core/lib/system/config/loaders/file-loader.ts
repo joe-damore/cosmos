@@ -21,12 +21,13 @@ class FileLoader implements Loader {
     this.filepath = filepath;
   }
 
+  // TODO Document thrown `LoadError` exception via JSDoc.
   /**
    * Asynchronously load config data from filepath.
    *
    * @returns {string} Loaded config data.
    */
-  public async load() : string {
+  public async load() : Promise<string> {
     try {
       return fs.promises.readFile(this.filepath, 'utf8');
     }
@@ -35,6 +36,7 @@ class FileLoader implements Loader {
     }
   }
 
+  // TODO Document thrown `LoadError` exception via JSDoc.
   /**
    * Synchronously load config data from filepath.
    *

@@ -1,11 +1,12 @@
-import Serializer from '@core/lib/system/config/Serializer';
-import SerializationError from '@core/lib/system/config';
+import Serializer from '@core/lib/system/config/serializer';
+import SerializationError from '@core/lib/system/config/serialization-error';
 
 /**
  * Serialize and deserialize config data to and from JSON.
  */
 class JsonSerializer implements Serializer {
 
+  // TODO Document thrown `SerializationError` exception via JSDoc.
   /**
    * Serialize config object into JSON string.
    *
@@ -22,6 +23,7 @@ class JsonSerializer implements Serializer {
     }
   }
 
+  // TODO Document thrown `SerializationError` exception via JSDoc.
   /**
    * Deserialize JSON string into object.
    *

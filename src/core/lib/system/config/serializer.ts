@@ -5,12 +5,12 @@ interface Serializer {
   /**
    * Serialize config object.
    */
-  toString: (object) => string;
+  toString: (data: object) => string;
 
   /**
    * Deserialize config object.
    */
-  toObject: (string) => object;
+  toObject: (data: string) => object;
 }
 
 export default Serializer;
