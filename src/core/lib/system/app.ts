@@ -2,7 +2,7 @@ import commander from 'commander';
 
 import Config from '@core/lib/system/config/config';
 import FileLoader from '@core/lib/system/config/loaders/file-loader';
-import JsonSerializer from '@core/lib/system/config/serializers/json-serializer';
+import YamlSerializer from '@core/lib/system/config/serializers/yaml-serializer';
 
 /**
  * Root application class.
@@ -35,7 +35,7 @@ abstract class App {
   /**
    * Loaded configuration data.
    */
-  protected config: object | null;
+  protected config: Config | null;
 
   /**
    * Constructor.
@@ -48,7 +48,7 @@ abstract class App {
     this.schema = schema;
     this.cli = new commander.Command();
     this.cli.version(version);
-    this.cli.option('-c, --config <filepath>', 'path to config file', './config.json');
+    this.cli.option('-c, --config <filepath>', 'path to config file', './config.yaml');
     this.config = null;
   }
 
@@ -100,15 +100,19 @@ abstract class App {
     this.cli.parse();
 
     // Create configuration manager object.
-    const config = new Config(
+    this.config = new Config(
       new FileLoader(this.cli.opts().config),
-      new JsonSerializer(),
+      new YamlSerializer(),
       this.schema
     );
 
     // Attempt to load configuration.
     try {
-      this.config = config.loadSync();
+      this.config.loadSync();
+      console.log(this.config.getAny('db.path'));
+      console.log(this.config.get<object>('db.path'));
+      console.log(this.config.getAny('db'));
+      console.log(this.config.getAny());
     }
     catch (err) {
       switch (err.name) {
