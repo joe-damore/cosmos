@@ -5,7 +5,8 @@
   "main": "dist/index.bundle.js",
   "scripts": {
     "start": "node .",
-    "build": "npx webpack"
+    "build": "npx webpack",
+    "buildrun": "yarn build && yarn start"
   },
   "repository": "git@github.com:joe-damore/cosmos.git",
   "author": "Joe D'Amore <joe@joedamore.me>",
