@@ -6,9 +6,10 @@ import SerializationError from '@core/lib/system/config/serialization-error';
  */
 class JsonSerializer implements Serializer {
 
-  // TODO Document thrown `SerializationError` exception via JSDoc.
   /**
    * Serialize config object into JSON string.
+   *
+   * @throws {SerializationError} Data must be able to be serialized.
    *
    * @param {Object} data - Object to serialize.
    *
@@ -23,9 +24,10 @@ class JsonSerializer implements Serializer {
     }
   }
 
-  // TODO Document thrown `SerializationError` exception via JSDoc.
   /**
    * Deserialize JSON string into object.
+   *
+   * @throws {SerializationError} Data must be properly formatted for JSON parser.
    *
    * @param {string} data - JSON string to deserialize.
    *

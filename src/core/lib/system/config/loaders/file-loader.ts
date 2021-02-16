@@ -21,9 +21,10 @@ class FileLoader implements Loader {
     this.filepath = filepath;
   }
 
-  // TODO Document thrown `LoadError` exception via JSDoc.
   /**
    * Asynchronously load config data from filepath.
+   *
+   * @throws {LoadError} Config file must exist and be readable.
    *
    * @returns {string} Loaded config data.
    */
@@ -36,9 +37,10 @@ class FileLoader implements Loader {
     }
   }
 
-  // TODO Document thrown `LoadError` exception via JSDoc.
   /**
    * Synchronously load config data from filepath.
+   *
+   * @throws {LoadError} Config file must exist and be readable.
    *
    * @returns {Promise<string>} Promise that resolves to loaded config data.
    */

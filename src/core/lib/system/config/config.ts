@@ -132,11 +132,12 @@ class Config {
     return current as T;
   }
 
-  // TODO Document thrown `ValidationError` exception via JSDoc.
   /**
    * Validates an object against this config instance's schema.
    *
    * A `ValidationError` is thrown if validation fails.
+   *
+   * @throws {ValidationError} Config data much conform to schema.
    *
    * @param {Object} data - Object data to validate.
    */

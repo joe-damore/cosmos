@@ -8,9 +8,10 @@ import SerializationError from '@core/lib/system/config/serialization-error';
  */
 class YamlSerializer implements Serializer {
 
-  // TODO Document thrown `SerializationError` exception via JSDoc.
   /**
    * Serialize config object into YAML string.
+   *
+   * @throws {SerializationError} Data must be able to be serialized.
    *
    * @param {Object} data - Object to serialize.
    *
@@ -25,9 +26,10 @@ class YamlSerializer implements Serializer {
     }
   }
 
-  // TODO Document thrown `SerializationError` exception via JSDoc.
   /**
    * Deserialize YAML string into object.
+   *
+   * @throws {SerializationError} Data must be properly formatted for YAML parser.
    *
    * @param {string} data - YAML string to deserialize.
    *
