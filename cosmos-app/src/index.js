@@ -1,1 +1,3 @@
-console.log('Hello, world!');
+const cosmosLib = require('cosmos-lib');
+
+console.log(cosmosLib);
