@@ -28,6 +28,7 @@ const mainConfig = {
   },
   resolve: {
     extensions: ['.ts', '.js', '.json', '.wasm'],
+    extensions: ['.ts', '.tsx', '.js', '.json', '.wasm'],
     alias: getAliases(__dirname),
   },
 };

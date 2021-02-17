@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Name of file that must exist for a renderer to be recognized.
-const ENTRY_FILE = 'index.ts';
+const ENTRY_FILE = 'index.tsx';
 
 /**
  * Returns an array of objects describing the name and entrypoint of a renderer.
