@@ -1,6 +1,13 @@
 # Text editor files
 *.sublime-workspace
 
+# Cosmos Lib
+# TODO Consider adding a new `.gitignore` in each subdirectory.
+cosmos-lib/dist/
+cosmos-lib/_bundles/
+cosmos-lib/lib/
+cosmos-lib/types/
+
 # Logs
 logs
 *.log
