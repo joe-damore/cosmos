@@ -7,7 +7,7 @@ const path = require('path');
 const webpackConfigBase = {
   mode: 'production',
   entry: {
-    'cosmos': './src/index.ts',
+    'cosmos-lib': './src/index.ts',
   },
   output: {
     filename: '[name].min.js',
