@@ -4,7 +4,7 @@
   "description": "Experimental media browser and launcher",
   "main": "dist/index.bundle.js",
   "scripts": {
-    "start": "node .",
+    "start": "electron .",
     "build": "npx webpack",
     "buildrun": "yarn build && yarn start"
   },
