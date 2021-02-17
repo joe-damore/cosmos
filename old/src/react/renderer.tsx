@@ -1,6 +1,6 @@
 // Get the base theme.
 import * as React from 'react';
-import '@themes/base/main.scss';
+//import '@themes/base/main.scss';
 
 const Renderer = (children: any) : any => {
 
