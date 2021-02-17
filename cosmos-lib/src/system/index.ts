@@ -1,4 +1,5 @@
-export * as config from '@lib/system/config';
-export * as serialization from '@lib/system/serialization';
+export * as config from './config';
+export * as io from './io';
+export * as serialization from './serialization';
 
-export * from '@lib/system/app';
+export * from './app';
