@@ -2,7 +2,13 @@
   "name": "cosmos-lib",
   "version": "0.1.0",
   "description": "Standard library for Cosmos app and plugins",
-  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx webpack",
+    "buildrun": "npx webpack && yarn start"
+  },
+  "main": "./_bundles/cosmos-lib.min.js",
+  "module": "./lib/cosmos-lib.min.js",
+  "types": "./types/index.d.ts",
   "repository": "https://github.com/joe-damore/cosmos",
   "author": "Joe D'Amore <joe@joedamore.me>",
   "license": "MIT",
