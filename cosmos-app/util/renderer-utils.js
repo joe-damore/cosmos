@@ -5,6 +5,24 @@ const path = require('path');
 const ENTRY_FILE = 'index.tsx';
 
 /**
+ * Describes a renderer.
+ */
+class RendererInfo {
+
+  /**
+   * Constructor.
+   *
+   * @param {string} name - Renderer name.
+   * @param {string} entrypoint - Path to renderer entrypoint.
+   */
+  constructor(name, entrypoint) {
+    this.name = name;
+    this.entrypoint = entrypoint;
+    this.title = null;
+  }
+}
+
+/**
  * Returns an array of objects describing the name and entrypoint of a renderer.
  *
  * Each object contains a `name` and `entrypoint` property.
@@ -21,13 +39,13 @@ const getRenderers = (rendererPath) => {
     .filter((dirent) => { return dirent.isDirectory(); })
     .filter((dirent) => { return fs.existsSync(path.join(absolutePath, dirent.name, ENTRY_FILE)); })
     .map((dirent) => {
-      return {
-        name: dirent.name,
-        entrypoint: path.join(absolutePath, dirent.name, ENTRY_FILE),
-      };
+      const name = dirent.name;
+      const entrypoint = path.join(absolutePath, dirent.name, ENTRY_FILE);
+      return new RendererInfo(name, entrypoint);
     });
 };
 
 module.exports = {
+  RendererInfo,
   getRenderers,
 };

@@ -24,12 +24,7 @@ const getAliases = (rootPath, options = {}) => {
   });
 
   return {
-    '@core': path.resolve(rootPath, 'src', 'core'),
-    '@ui': path.resolve(rootPath, 'src', 'core', 'lib', 'react', 'ui'),
-    '@themes': path.resolve(rootPath, 'src', 'core', 'themes'),
-    '@lib': path.resolve(rootPath, 'src', 'core', 'lib'),
     '@main': path.resolve(rootPath, 'src', 'main'),
-    '@app': path.resolve(rootPath, 'src', 'main', 'app'),
     '@renderers': path.resolve(rootPath, 'src', 'renderers'),
     ...rendererOnlyOptions,
   };
