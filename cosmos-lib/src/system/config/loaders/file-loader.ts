@@ -1,6 +1,8 @@
 import * as fs from 'fs';
 import { Loader, LoadError } from '@lib/system/config/loaders';
 
+// TODO Replace fs filesystem reading with cosmos-lib/system/io/filesystem.
+
 /**
  * Load configuration data from a file.
  */
