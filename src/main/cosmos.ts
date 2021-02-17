@@ -1,4 +1,6 @@
 import App from '@core/lib/system/app';
+import { BrowserWindow } from 'electron';
+import { getEntrypoint } from '@core/lib/window/util';
 
 /**
  * Cosmos app class.
@@ -7,10 +9,16 @@ import App from '@core/lib/system/app';
  */
 class CosmosApp extends App {
 
+  /**
+   * Start application.
+   */
   public init() : number {
-    console.log('Hello, world!');
-    console.log(this.config);
-    //console.log(this.config.db.path);
+    const win = new BrowserWindow({
+      width: 800,
+      height: 600,
+    });
+
+    win.loadFile(getEntrypoint('app'));
 
     return 0;
   }
