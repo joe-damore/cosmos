@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { getAliases } = require('./util/alias-utils');
 const { getRenderers } = require('./util/renderer-utils.js');
 
@@ -27,7 +28,6 @@ const mainConfig = {
     ],
   },
   resolve: {
-    extensions: ['.ts', '.js', '.json', '.wasm'],
     extensions: ['.ts', '.tsx', '.js', '.json', '.wasm'],
     alias: getAliases(__dirname),
   },
@@ -60,6 +60,11 @@ const rendererConfigs = getRenderers(RENDERER_PATH).map((renderer) => {
         },
       ],
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, 'src', 'core', 'templates', 'index.html.ejs'),
+      }),
+    ],
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.wasm'],
       alias: getAliases(__dirname, { renderer: true, rendererName: renderer.name }),
