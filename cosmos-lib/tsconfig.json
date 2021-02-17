@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./lib",
+    "outDir": "./types",
     "noImplicitAny": true,
     "module": "commonjs",
     "moduleResolution": "node",
