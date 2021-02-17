@@ -125,7 +125,7 @@ abstract class App {
 
     // Initialize Electron and then initialize application.
     app.whenReady().then(() => {
-      this.exit(this.init());
+      this.init();
     });
   }
 }
