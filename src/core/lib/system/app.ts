@@ -1,4 +1,5 @@
 import commander from 'commander';
+import { app } from 'electron';
 
 import Config from '@core/lib/system/config/config';
 import FileLoader from '@core/lib/system/config/loaders/file-loader';
@@ -109,10 +110,6 @@ abstract class App {
     // Attempt to load configuration.
     try {
       this.config.loadSync();
-      console.log(this.config.getAny('db.path'));
-      console.log(this.config.get<object>('db.path'));
-      console.log(this.config.getAny('db'));
-      console.log(this.config.getAny());
     }
     catch (err) {
       switch (err.name) {
@@ -126,8 +123,10 @@ abstract class App {
       }
     }
 
-    // Initialize application.
-    this.exit(this.init());
+    // Initialize Electron and then initialize application.
+    app.whenReady().then(() => {
+      this.exit(this.init());
+    });
   }
 }
 
