@@ -1,7 +1,7 @@
 /**
  * Configuration validation error.
  */
-class ValidationError extends Error {
+export class ValidationError extends Error {
 
   /**
    * @inheritdoc
@@ -11,5 +11,3 @@ class ValidationError extends Error {
     this.name = 'ValidationError';
   }
 }
-
-export default ValidationError;

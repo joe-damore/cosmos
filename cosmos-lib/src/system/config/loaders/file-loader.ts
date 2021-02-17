@@ -1,11 +1,10 @@
 import * as fs from 'fs';
-import Loader from '@core/lib/system/config/loader';
-import LoadError from '@core/lib/system/config/load-error';
+import { Loader, LoadError } from '@lib/system/config/loaders';
 
 /**
  * Load configuration data from a file.
  */
-class FileLoader implements Loader {
+export class FileLoader implements Loader {
 
   /**
    * Path to config file to load.
@@ -53,5 +52,3 @@ class FileLoader implements Loader {
     }
   }
 }
-
-export default FileLoader;

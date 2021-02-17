@@ -7,11 +7,9 @@ import * as path from 'path';
  *
  * @returns {string} Path to entrypoint for renderer named `rendererName`.
  */
-const getEntrypoint = (rendererName: string) => {
+export const getEntrypoint = (rendererName: string) => {
   const RENDERER_DIRECTORY = 'renderers';
   const RENDERER_ENTRYPOINT = 'index.html';
 
   return path.resolve('./dist', RENDERER_DIRECTORY, rendererName, RENDERER_ENTRYPOINT);
 };
-
-export default getEntrypoint;

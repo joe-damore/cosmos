@@ -1,12 +1,13 @@
-import Loader from '@core/lib/system/config/loader';
-import Serializer from '@core/lib/system/config/serializer';
-import ValidationError from '@core/lib/system/config/validation-error';
 import jsonschema from 'jsonschema';
+
+import { Loader } from '@lib/system/config/loaders';
+import { Serializer } from '@lib/system/serialization';
+import { ValidationError } from '@lib/system/config';
 
 /**
  * Manages the retrieval, deserialization, and validation of read-only config.
  */
-class Config {
+export class Config {
 
   /**
    * Loader implementation responsible for retrieving configuration data.
@@ -172,5 +173,3 @@ class Config {
     return addressComponents;
   }
 }
-
-export default Config;

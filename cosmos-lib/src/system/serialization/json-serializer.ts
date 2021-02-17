@@ -1,10 +1,9 @@
-import Serializer from '@core/lib/system/config/serializer';
-import SerializationError from '@core/lib/system/config/serialization-error';
+import { Serializer, SerializationError } from '@lib/system/serialization';
 
 /**
  * Serialize and deserialize config data to and from JSON.
  */
-class JsonSerializer implements Serializer {
+export class JsonSerializer implements Serializer {
 
   /**
    * Serialize config object into JSON string.
@@ -42,5 +41,3 @@ class JsonSerializer implements Serializer {
     }
   }
 }
-
-export default JsonSerializer;

@@ -1,9 +1,8 @@
 import commander from 'commander';
-import { app } from 'electron';
 
-import Config from '@core/lib/system/config/config';
-import FileLoader from '@core/lib/system/config/loaders/file-loader';
-import YamlSerializer from '@core/lib/system/config/serializers/yaml-serializer';
+import { Config } from '@lib/system/config/config';
+import { FileLoader } from '@lib/system/config/loaders';
+import { YamlSerializer } from '@lib/system/serialization';
 
 /**
  * Root application class.
@@ -11,7 +10,7 @@ import YamlSerializer from '@core/lib/system/config/serializers/yaml-serializer'
  * Manages app bootstrapping by parsing CLI arguments and reading configuration
  * data.
  */
-abstract class App {
+export abstract class App {
 
   /**
    * Application name.
@@ -123,11 +122,6 @@ abstract class App {
       }
     }
 
-    // Initialize Electron and then initialize application.
-    app.whenReady().then(() => {
-      this.init();
-    });
+    this.init();
   }
 }
-
-export default App;

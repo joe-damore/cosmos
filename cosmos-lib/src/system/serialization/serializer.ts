@@ -1,7 +1,7 @@
 /**
  * Interface to serialize and deserialize config data from arbitrary formats.
  */
-interface Serializer {
+export interface Serializer {
   /**
    * Serialize config object.
    */
@@ -12,5 +12,3 @@ interface Serializer {
    */
   toObject: (data: string) => object;
 }
-
-export default Serializer;

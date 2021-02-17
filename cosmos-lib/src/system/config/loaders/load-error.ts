@@ -1,7 +1,7 @@
 /**
  * Configuration loading error.
  */
-class LoadError extends Error {
+export class LoadError extends Error {
 
   /**
    * @inheritdoc
@@ -11,5 +11,3 @@ class LoadError extends Error {
     this.name = 'LoadError';
   }
 }
-
-export default LoadError;

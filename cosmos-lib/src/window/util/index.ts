@@ -1,1 +1,1 @@
-export { default as getEntrypoint} from './get-entrypoint';
+export * from '@lib/window/util/get-entrypoint';

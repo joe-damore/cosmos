@@ -1,7 +1,7 @@
 /**
  * Configuration serialization error.
  */
-class SerializationError extends Error {
+export class SerializationError extends Error {
 
   /**
    * @inheritdoc
@@ -11,5 +11,3 @@ class SerializationError extends Error {
     this.name = 'SerializationError';
   }
 }
-
-export default SerializationError;

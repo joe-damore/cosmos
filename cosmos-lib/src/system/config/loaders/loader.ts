@@ -1,7 +1,7 @@
 /**
  * Interface to load configuration data from arbitrary sources.
  */
-interface Loader {
+export interface Loader {
   /**
    * Asynchronously loads config data from an arbitrary source.
    */
@@ -12,5 +12,3 @@ interface Loader {
    */
   loadSync: () => string;
 };
-
-export default Loader;

@@ -1,12 +1,11 @@
 import YAML from 'yaml';
 
-import Serializer from '@core/lib/system/config/serializer';
-import SerializationError from '@core/lib/system/config/serialization-error';
+import { Serializer, SerializationError } from '@lib/system/serialization';
 
 /**
  * Serializes and deserializes config data to and from YAML.
  */
-class YamlSerializer implements Serializer {
+export class YamlSerializer implements Serializer {
 
   /**
    * Serialize config object into YAML string.
@@ -43,7 +42,4 @@ class YamlSerializer implements Serializer {
       throw new SerializationError('Failed to deserialize configuration data from YAML');
     }
   }
-
 }
-
-export default YamlSerializer;
