@@ -9,9 +9,9 @@ import * as path from 'path';
  */
 const getEntrypoint = (rendererName: string) => {
   const RENDERER_DIRECTORY = 'renderers';
-  const RENDERER_ENTRYPOINT = 'index.js';
+  const RENDERER_ENTRYPOINT = 'index.html';
 
-  return path.resolve(`./${RENDERER_DIRECTORY}`, rendererName, RENDERER_ENTRYPOINT);
-}
+  return path.resolve('./dist', RENDERER_DIRECTORY, rendererName, RENDERER_ENTRYPOINT);
+};
 
 export default getEntrypoint;
