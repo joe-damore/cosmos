@@ -1,0 +1,13 @@
+{
+  "name": "cosmos-app",
+  "version": "0.1.0",
+  "description": "Cosmos launcher and media player",
+  "main": "src/index.js",
+  "repository": "https://github.com/joe-damore/cosmos",
+  "author": "Joe D'Amore <joe@joedamore.me>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "cosmos-lib": "../cosmos-lib"
+  }
+}
