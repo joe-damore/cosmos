@@ -4,6 +4,9 @@ const path = require('path');
 // Name of file that must exist for a renderer to be recognized.
 const ENTRY_FILE = 'index.tsx';
 
+// Name of file that may exist for renderer build metadata.
+const META_FILE = 'meta.json';
+
 /**
  * Describes a renderer.
  */
@@ -19,13 +22,15 @@ class RendererInfo {
     this.name = name;
     this.entrypoint = entrypoint;
     this.title = null;
+    this.template = null;
   }
 }
 
 /**
  * Returns an array of objects describing the name and entrypoint of a renderer.
  *
- * Each object contains a `name` and `entrypoint` property.
+ * Each object contains a `name`, `entrypoint`, `title`, and `template`
+ * properties.
  *
  * Requires Node v10+.
  *
@@ -41,7 +46,33 @@ const getRenderers = (rendererPath) => {
     .map((dirent) => {
       const name = dirent.name;
       const entrypoint = path.join(absolutePath, dirent.name, ENTRY_FILE);
-      return new RendererInfo(name, entrypoint);
+      const meta = path.join(absolutePath, dirent.name, META_FILE);
+      const renderer = new RendererInfo(name, entrypoint);
+
+      renderer.template = path.join(absolutePath, '_assets', 'templates', 'index.html.ejs');
+      renderer.title = name;
+
+      if (fs.existsSync(meta)) {
+        try {
+          const fileData = fs.readFileSync(meta, 'utf8');
+          const data = JSON.parse(fileData);
+
+          // Override template.
+          if (data.template) {
+            renderer.template = data.template;
+          }
+
+          // Override title.
+          if (data.title) {
+            renderer.title = data.title;
+          }
+        }
+        catch {
+          console.error(`Failed to read or parse renderer metadata at ${meta}`);
+        }
+      }
+
+      return renderer;
     });
 };
 
