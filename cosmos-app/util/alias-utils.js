@@ -18,6 +18,8 @@ const getAliases = (rootPath, options = {}) => {
     if (options.renderer && options.rendererName) {
       return {
         '@renderer': path.resolve(rootPath, 'src', 'renderers', options.rendererName),
+        '@assets': path.resolve(rootPath, 'src', 'renderers', options.rendererName, '_assets'),
+        '@global-assets': path.resolve(rootPath, 'src', 'renderers', '_assets'),
       };
     }
     return [];
