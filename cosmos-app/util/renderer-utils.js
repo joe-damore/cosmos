@@ -59,7 +59,12 @@ const getRenderers = (rendererPath) => {
 
           // Override template.
           if (data.template) {
-            renderer.template = data.template;
+            if (path.isAbsolute(data.template)) {
+              renderer.template = data.template;
+            }
+            else {
+              renderer.template = path.resolve(absolutePath, name, data.template);
+            }
           }
 
           // Override title.
